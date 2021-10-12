@@ -9,7 +9,8 @@ import (
 )
 
 const (
-	optionNameDataDir = "data-dir"
+	optionNameDataDir      = "data-dir"
+	optionNameSwapEndpoint = "swap-endpoint"
 )
 
 func init() {
@@ -37,6 +38,7 @@ func newCommand(opts ...option) (c *command, err error) {
 	}
 
 	c.initNonceCmd()
+	c.initChequebookCmd()
 	c.initVersionCmd()
 
 	return c, nil
